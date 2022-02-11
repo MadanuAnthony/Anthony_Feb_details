@@ -1,3 +1,4 @@
+Changes Made
 
 
 Top N Discard In        = IF([Top N Rank Discard In]<=SELECTEDVALUE(TOP_N[SELECT_N]),1,0)
