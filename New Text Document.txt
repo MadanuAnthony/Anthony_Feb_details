@@ -1,0 +1,20 @@
+
+
+Top N Discard In        = IF([Top N Rank Discard In]<=SELECTEDVALUE(TOP_N[SELECT_N]),1,0)
+Top N Discard In Daily  = IF([Top N Rank Discard In Daily]<=SELECTEDVALUE(TOP_N[SELECT_N]),1,0)
+Top N Discard In Hourly = IF([Top N Rank Discard In Hourly]<=SELECTEDVALUE(TOP_N[SELECT_N]),1,0)
+Top N Discard In Weekly = IF([Top N Rank Discard In weekly]<=SELECTEDVALUE(TOP_N[SELECT_N]),1,0)
+
+Top N Rank Discard In   	= RANKX(ALLSELECTED(vw_equipment_pbi_rpt[device_name]),CALCULATE(AVERAGE(vm_monthly_interface_performance_pbi_rpt[discards_in])),,DESC,Dense)
+
+
+Top N Rank Discard In Daily  	= RANKX(ALLSELECTED(vw_equipment_pbi_rpt[device_name]),CALCULATE(AVERAGE(vm_daily_interface_performance_pbi_rpt[discards_in])),,DESC,Dense)
+
+
+Top N Rank Discard In Hourly  	= RANKX(ALLSELECTED(vw_equipment_pbi_rpt[device_name]),CALCULATE(AVERAGE(vm_hourly_interface_performance_pbi_rpt[discards_in])),,DESC,Dense)
+
+
+Top N Rank Discard In weekly  	= RANKX(ALLSELECTED(vw_equipment_pbi_rpt[device_name]),CALCULATE(AVERAGE(vm_weekly_interface_performance_pbi_rpt[discards_in])),,DESC,Dense)
+
+
+
